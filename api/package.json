@@ -1,0 +1,23 @@
+{
+  "name": "api.todo.com",
+  "version": "1.0.0",
+  "description": "todo.com api",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/wmpay/todo.com.git"
+  },
+  "author": "Max Paymar",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/wmpay/todo.com/issues"
+  },
+  "homepage": "https://github.com/wmpay/todo.com#readme",
+  "dependencies": {
+    "restify": "^7.0.0"
+  }
+}
