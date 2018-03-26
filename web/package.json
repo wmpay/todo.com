@@ -17,6 +17,8 @@
   },
   "homepage": "https://github.com/wmpay/todo.com#readme",
   "dependencies": {
+    "html-loader": "^0.5.5",
+    "vue": "^2.5.16",
     "webpack": "^4.2.0",
     "webpack-cli": "^2.0.13"
   }
