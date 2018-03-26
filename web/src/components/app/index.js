@@ -1,7 +1,7 @@
 import Vue from 'vue';
 import template from './app.html';
 
-const appComponent = {
+export default {
   data: () => {
     return {
       message: 'Hello World',
@@ -9,5 +9,3 @@ const appComponent = {
   },
   template: template,
 };
-
-export { appComponent as default };
