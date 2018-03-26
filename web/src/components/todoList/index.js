@@ -1,4 +1,3 @@
-import Vue from 'vue';
 import template from './todoList.html';
 import todoService from '../../services/todo';
 
