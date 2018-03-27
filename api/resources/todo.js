@@ -18,7 +18,7 @@ module.exports = (server, orm) => {
 		const todo = req.body;
 
 		orm.models.todo.create(todo).then(todo => {
-			res.send(200);
+			res.send(200, todo);
 			return next();
 		})
 	});
@@ -36,7 +36,7 @@ module.exports = (server, orm) => {
 				return next(new errors.NotFoundError('No todo with that id exists'));
 			} else {
 				todo.update(payload).then(todo => {
-					res.send(200);
+					res.send(200, todo);
 					return next();
 				})
 			}
