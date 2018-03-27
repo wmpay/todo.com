@@ -14,6 +14,10 @@ Start the containers
   docker-compose up
 ```
 
+## Api Docs
+
+Api docs can be viewed [here](/api/docs/README.md).
+
 ## Running tests
 
 ## License

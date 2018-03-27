@@ -21,11 +21,11 @@ psql todo --username todo <<-EOSQL
 EOSQL
 
 psql todo --username todo <<-EOSQL
-	  INSERT INTO todos VALUES (
-	  	1,
-	  	'gotta code',
-	  	'coding practice',
-	  	date '2018-03-26',
+	  INSERT INTO todos (name, description, due_date, complete)
+	  VALUES (
+	  	'Create To Do App',
+	  	'Create a web application that displays todo items',
+	  	date '2018-03-27',
 	  	false
-	  )
+	  );
 EOSQL

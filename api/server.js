@@ -8,6 +8,8 @@ const options = {
 
 const server = restify.createServer(options);
 
+server.use(restify.plugins.bodyParser());
+
 todoResource(server, orm);
 
 server.listen(9000, () => {
