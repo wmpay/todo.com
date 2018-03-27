@@ -8,7 +8,7 @@ export default {
         name: null,
         description: null,
         dueDate: null,
-        compelete: null,
+        compelete: false,
       },
     };
   },

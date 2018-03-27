@@ -29,7 +29,11 @@ module.exports = (server, orm) => {
 		res.setHeader('Access-Control-Allow-Origin', '*');
 
 		orm.models.todo
-			.findAll()
+			.findAll({
+				order: [
+					['dueDate', 'DESC'],
+				],
+			})
 			.then((data) => {
 				res.send(data);
 				return next();
@@ -79,6 +83,9 @@ module.exports = (server, orm) => {
 	})
 
 	server.patch('/todo/:id', (req, res, next) => {
+
+		res.setHeader('Access-Control-Allow-Origin', '*');
+
 		if (!req.body) {
 			return next(new errors.BadRequestError('No data found in body of request'));
 		}

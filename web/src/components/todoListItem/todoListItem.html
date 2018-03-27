@@ -2,11 +2,23 @@
   <div class="d-flex w-100 justify-content-between">
     <h5 class="mb-1">{{ name }}</h5>
     <div class="btn-group">
-    	<button class="btn btn-success"><i class="fa fa-check"></i> Complete</button>
+    	<button 
+        class="btn"
+        v-bind:class="{
+          'btn-success': complete,
+          'btn-default': incomplete
+        }"
+        v-on:click="completeTodo();"
+      ><i class="fa fa-check" v-if="complete"></i> Complete </button>
 	    <button class="btn btn-danger" v-on:click="deleteTodo();"><i class="fa fa-times"></i> Delete</button>
 		</div>
   </div>
   <div>
+    <p class="mb-1">
+      Due: {{ formatDate(dueDate) }}
+      <i class="fa fa-clock text-warning" v-if="dueSoon"></i>
+      <i class="fa fa-exclamation-circle text-danger" v-if="pastDue"></i>
+    </p>
     <p class="mb-1">{{ description }}</p>
   </div>
 </div>
