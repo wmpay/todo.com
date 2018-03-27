@@ -7,3 +7,4 @@
 - add datepicker dependancy?
 - add detail view for todo lists?
 - implement mark as completed functionality
+- add nginx rewrite for /api/
