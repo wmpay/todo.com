@@ -1,7 +1,26 @@
 const errors = require('restify-errors');
 
 module.exports = (server, orm) => {
+	server.opts('/todo', (req, res, next) => {
+
+		// to accomodate for JavaScript fetch api preflight checks
+
+		const allowedHeaders = [
+			'Access-Control-Allow-Origin',
+			'Access-Control-Allow-Headers',
+			'Content-Type',
+		];
+
+		res.setHeader('Allow', 'OPTIONS, GET, POST, PATCH, DELETE');
+		res.setHeader('Access-Control-Allow-Origin', '*');
+		res.setHeader('Access-Control-Allow-Headers', allowedHeaders.join(','))
+		res.send(200);
+		return next();
+	})
 	server.get('/todo', (req, res, next) => {
+
+		res.setHeader('Access-Control-Allow-Origin', '*');
+
 		orm.models.todo
 			.findAll()
 			.then((data) => {
