@@ -37,6 +37,9 @@ module.exports = (server, orm) => {
 	});
 
 	server.post('/todo', (req, res, next) => {
+
+		res.setHeader('Access-Control-Allow-Origin', '*');
+
 		if (!req.body) {
 			return next(new errors.BadRequestError('No data found in body of request'));
 		}
@@ -46,7 +49,9 @@ module.exports = (server, orm) => {
 		orm.models.todo.create(todo).then(todo => {
 			res.send(200, todo);
 			return next();
-		})
+		}).catch(err => {
+			return next(new errors.BadRequestError(err));
+		});
 	});
 
 	server.opts('/todo/:id', (req, res, next) => {
@@ -88,9 +93,11 @@ module.exports = (server, orm) => {
 				todo.update(payload).then(todo => {
 					res.send(200, todo);
 					return next();
-				})
+				}).catch(err => {
+					return next(new errors.BadRequestError(err));
+				});
 			}
-		})
+		});
 
 	});
 

@@ -14,6 +14,17 @@ export default {
   	});
   },
   post: (payload) => {
+    const headers = new Headers();
+    headers.append('Access-Control-Allow-Headers', '*');
+    headers.append('Content-Type', 'application/json');
+    const options = {
+      method: 'POST',
+      headers: headers,
+      mode: 'cors',
+      body: payload,
+    };
+    const request = new Request('http://localhost:9000/todo');
+    return fetch(request, options);
   },
   patch: (id, payload) => {
   },

@@ -8,6 +8,7 @@ export default {
       }, {
         adaptive: true,
         minHeight: 450,
+        name: 'todoEditor',
       });
     },
   },
