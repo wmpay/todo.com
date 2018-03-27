@@ -17,5 +17,8 @@ module.exports = (sequelize, DataTypes) => {
 		complete: {
 			type: DataTypes.BOOLEAN,
 		},
+	}, {
+		// sequelize adds updatedAt and createdAt to queries
+		timestamps: false,
 	});
 };

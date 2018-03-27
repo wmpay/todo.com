@@ -1,5 +1,6 @@
 const restify = require('restify');
 const orm = require('./orm');
+const todoResource = require('./resources/todo');
 
 const options = {
 	name: 'api',
@@ -7,12 +8,7 @@ const options = {
 
 const server = restify.createServer(options);
 
-function respond(req, res, next) {
-	res.send('hello world');
-	next();
-}
-
-server.get('/hello', respond)
+todoResource(server, orm);
 
 server.listen(9000, () => {
 	console.log('%s listening at %s', server.name, server.url)
