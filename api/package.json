@@ -18,6 +18,8 @@
   },
   "homepage": "https://github.com/wmpay/todo.com#readme",
   "dependencies": {
-    "restify": "^7.0.0"
+    "pg": "^7.4.1",
+    "restify": "^7.0.0",
+    "sequelize": "^4.37.4"
   }
 }

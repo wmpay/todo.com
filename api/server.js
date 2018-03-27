@@ -1,4 +1,5 @@
 const restify = require('restify');
+const orm = require('./orm');
 
 const options = {
 	name: 'api',
