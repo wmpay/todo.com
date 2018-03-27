@@ -1,23 +1,21 @@
-const Datatypes = require('sequelize').DataTypes;
-
-module.exports = (sequelize) => {
+module.exports = (sequelize, DataTypes) => {
 	sequelize.define('todo', {
 		id: {
-			type: Datatypes.INTEGER,
+			type: DataTypes.INTEGER,
 			primaryKey: true,
 		},
 		name: {
-			type: Datatypes.STRING,
+			type: DataTypes.STRING,
 		},
 		description: {
 			type: DataTypes.TEXT,
 		},
 		dueDate: {
-			type: Datatypes.DATE,
+			type: DataTypes.DATE,
 			field: 'due_date',
 		},
 		complete: {
-			type: Datatypes.BOOLEAN,
+			type: DataTypes.BOOLEAN,
 		},
 	});
 };
