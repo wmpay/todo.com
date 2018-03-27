@@ -18,6 +18,14 @@ export default {
   patch: (id, payload) => {
   },
   delete: (id) => {
+    const headers = new Headers();
     headers.append('Access-Control-Allow-Headers', '*');
+    const options = {
+      method: 'DELETE',
+      headers: headers,
+      mode: 'cors',
+    };
+    const request = new Request('http://localhost:9000/todo/' + id);
+    return fetch(request, options);
   },
 };

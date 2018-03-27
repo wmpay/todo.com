@@ -1,7 +1,11 @@
 <div>
     <toolbar></toolbar>
-    <div v-if="todosLoading"><i class="fa fa-spinner"></i> Loading...</div>
-    <div v-else>
+    <div class="text-center" v-if="todosLoading"><i class="fa fa-spinner"></i> Loading...</div>
+    <div 
+      v-else
+      style="overflow-y: scroll; max-height: 65vh;"
+      class="list-group"
+    >
       <todo-list-item
         v-for="todo in todos"
         :key="todo.id"
@@ -9,6 +13,7 @@
         v-bind:name="todo.name"
         v-bind:description="todo.description"
         v-bind:dueDate="todo.dueDate"
+        class="list-group-item"
       >
       </todo-list-item>
     </div>

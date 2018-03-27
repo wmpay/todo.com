@@ -9,5 +9,10 @@ export default {
       });
     },
   },
+  methods: {
+    reloadTodos: function() {
+      this.asyncReload('todos');
+    },
+  },
   template: template,
 };

@@ -11,12 +11,19 @@ module.exports = (server, orm) => {
 			'Content-Type',
 		];
 
-		res.setHeader('Allow', 'OPTIONS, GET, POST, PATCH, DELETE');
+		const allowedMethods = [
+			'OPTIONS',
+			'GET',
+			'POST',
+		];
+
+		res.setHeader('Allow', allowedMethods.join(','));
 		res.setHeader('Access-Control-Allow-Origin', '*');
 		res.setHeader('Access-Control-Allow-Headers', allowedHeaders.join(','))
 		res.send(200);
 		return next();
-	})
+	});
+
 	server.get('/todo', (req, res, next) => {
 
 		res.setHeader('Access-Control-Allow-Origin', '*');
@@ -42,6 +49,30 @@ module.exports = (server, orm) => {
 		})
 	});
 
+	server.opts('/todo/:id', (req, res, next) => {
+
+		// to accomodate for JavaScript fetch api preflight checks
+
+		const allowedHeaders = [
+			'Access-Control-Allow-Origin',
+			'Access-Control-Allow-Headers',
+			'Content-Type',
+		];
+
+		const allowedMethods = [
+			'OPTIONS',
+			'PATCH',
+			'DELETE',
+		];
+
+		res.setHeader('Allow', allowedMethods.join(','));
+		res.setHeader('Access-Control-Allow-Origin', '*');
+		res.setHeader('Access-Control-Allow-Headers', allowedHeaders.join(','));
+		res.setHeader('Access-Control-Allow-Methods', allowedMethods.join(','));
+		res.send(200);
+		return next();
+	})
+
 	server.patch('/todo/:id', (req, res, next) => {
 		if (!req.body) {
 			return next(new errors.BadRequestError('No data found in body of request'));
@@ -64,6 +95,9 @@ module.exports = (server, orm) => {
 	});
 
 	server.del('/todo/:id', (req, res, next) => {
+
+		res.setHeader('Access-Control-Allow-Origin', '*');
+
 		const id = req.params.id;
 		orm.models.todo.destroy({
 			where: {
