@@ -29,10 +29,8 @@ export default {
     },
   },
   computed: {
-    incomplete: function () {
-      return !this.complete;
-    },
     dueSoon: function () {
+      // buggy due to timezone?
       const today = moment();
       const dueDate = moment(this.dueDate)
       const diff = dueDate.diff(today, 'days');

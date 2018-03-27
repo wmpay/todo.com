@@ -2,3 +2,4 @@
 - implement filters for toolbar: due tomorrow, due today, overdue, completed
 - implement api tests
 - add nginx rewrite for /api/
+- bug fixes

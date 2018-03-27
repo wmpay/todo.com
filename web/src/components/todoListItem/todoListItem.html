@@ -6,7 +6,7 @@
         class="btn"
         v-bind:class="{
           'btn-success': complete,
-          'btn-default': incomplete
+          'btn-outline-success': !complete
         }"
         v-on:click="completeTodo();"
       ><i class="fa fa-check" v-if="complete"></i> Complete </button>
