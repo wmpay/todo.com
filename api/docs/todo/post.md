@@ -2,7 +2,7 @@
 
 Allow the User to create a todo.
 
-**URL** : `/todo/`
+**URL** : `http://api:9000/todo`
 
 **Method** : `POST`
 
@@ -10,10 +10,10 @@ Allow the User to create a todo.
 
 ```json
 {
-    "name": "[1 to 255 characters]",
-    "description": "[unlimited characters]",
-    "dueDate": "[date string]",
-    "complete": [boolean]
+  "name": "[1 to 255 characters]",
+  "description": "[unlimited characters]",
+  "dueDate": "[date string]",
+  "complete": [boolean]
 }
 ```
 
@@ -23,9 +23,9 @@ Partial data is allowed.
 
 ```json
 {
-    "name": "cool thing todo",
-    "dueDate": "2018-03-27",
-    "complete": false
+  "name": "cool thing todo",
+  "dueDate": "2018-03-27",
+  "complete": false
 }
 ```
 

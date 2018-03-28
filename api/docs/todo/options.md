@@ -2,6 +2,6 @@
 
 Allow the User to query the available resource methods for todos.
 
-**URL** : `/todo/`
+**URL** : `http://api:9000/todo`
 
 **Method** : `OPTIONS`

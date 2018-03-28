@@ -2,7 +2,7 @@
 
 Allow the User to update a todo.
 
-**URL** : `/todo/:id`
+**URL** : `PATCH http://api:9000/todo/:id`
 
 **Method** : `PATCH`
 
@@ -10,10 +10,10 @@ Allow the User to update a todo.
 
 ```json
 {
-    "name": "[1 to 255 characters]",
-    "description": "[unlimited characters]",
-    "dueDate": "[date string]"
-    "complete": [boolean]
+  "name": "[1 to 255 characters]",
+  "description": "[unlimited characters]",
+  "dueDate": "[date string]"
+  "complete": [boolean]
 }
 
 **Data examples**
@@ -22,9 +22,9 @@ Partial data is allowed.
 
 ```json
 {
-    "name": "cool thing todo",
-    "dueDate": "2018-03-27",
-    "complete": false
+  "name": "cool thing todo",
+  "dueDate": "2018-03-27",
+  "complete": false
 }
 ```
 
@@ -33,6 +33,7 @@ Partial data is allowed.
 **Condition** : Data provided is valid.
 
 **Code** : `200 OK`
+
 
 ## Error Responses
 

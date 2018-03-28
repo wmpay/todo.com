@@ -2,7 +2,7 @@
 
 Allow the User to delete a todo.
 
-**URL** : `/todo/:id`
+**URL** : `http://api:9000/todo/:id`
 
 **Method** : `DELETE`
 

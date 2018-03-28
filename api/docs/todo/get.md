@@ -2,6 +2,6 @@
 
 Allow the User to get all todos.
 
-**URL** : `/todo/`
+**URL** : `http://api:9000/todo`
 
 **Method** : `GET`
