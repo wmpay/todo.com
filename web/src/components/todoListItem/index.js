@@ -11,12 +11,12 @@ export default {
     'complete',
   ],
   methods: {
-  	deleteTodo: function () {
-  		todoService.delete(this.id).then(() => {
+    deleteTodo: function () {
+      todoService.delete(this.id).then(() => {
         // use event here
-  			this.$parent.reloadTodos();
-  		});
-  	},
+        this.$parent.reloadTodos();
+      });
+    },
     completeTodo: function () {
       todoService.patch(this.id, JSON.stringify({complete: true})).then(() => {
         // use event here

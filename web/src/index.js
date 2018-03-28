@@ -14,6 +14,7 @@ Vue.component('toolbar', toolbar);
 Vue.use(VModal, {dynamic: true});
 Vue.use(AsyncDataPlugin);
 
+// eslint-disable-next-line no-unused-vars
 const app = new Vue({
   el: '#app',
 });
