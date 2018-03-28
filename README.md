@@ -6,11 +6,14 @@ A web application to manage To Do items
 
 Installation was tested on macOS High Sierra Version 10.13.2
 
-Install brew: `/usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"`
 
-Install node and npm: `brew install node`
+[(Optional) Install homebrew](https://brew.sh/): 
+`/usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"`
 
-Install dependancies: `npm install`
+[Install node and npm](https://nodejs.org/en/download/), or use homebrew:
+`brew install node`
+
+Install node dependancies: `npm install`
 
 [Install Docker](https://docs.docker.com/install/)
 
@@ -22,7 +25,7 @@ Start the containers
 
 Navigate to localhost:8080 in your web browser
 
-## Api Docs
+## API Docs
 
 Api docs can be viewed [here](/api/docs/README.md).
 
