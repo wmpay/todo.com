@@ -22,6 +22,16 @@
       >
         Overdue
       </button>
+      <button
+        class="btn"
+        v-bind:class="{
+          'btn-primary': filterState.completed,
+          'btn-outline-primary': !filterState.completed
+        }"
+        v-on:click="toggleFilterState('completed');"
+      >
+        Completed
+      </button>
   	</div>
   </div>
   <button

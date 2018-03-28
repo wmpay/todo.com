@@ -5,12 +5,13 @@ export default {
   asyncData: {
     todos() {
       return new Promise((resolve) => {
-        resolve(todoService.get());
+        resolve(todoService.get(this.filter));
       });
     },
   },
   methods: {
-    reloadTodos: function() {
+    reloadTodos: function(filter) {
+      this.filter = filter;
       this.asyncReload('todos');
     },
   },

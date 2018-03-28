@@ -9,6 +9,7 @@ const options = {
 const server = restify.createServer(options);
 
 server.use(restify.plugins.bodyParser());
+server.use(restify.plugins.queryParser());
 
 todoResource(server, orm);
 

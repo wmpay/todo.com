@@ -1,5 +1,4 @@
 # todo list for the todo app
 - implement filters for toolbar
-- implement api tests
-- add nginx rewrite for /api/
+- use nginx as a reverse proxy to api and get rid of CORS code
 - bug fixes

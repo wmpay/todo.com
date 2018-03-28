@@ -1,5 +1,5 @@
 export default {
-  get: () => {
+  get: (filter) => {
     const headers = new Headers();
     headers.append('Access-Control-Allow-Headers', '*');
     headers.append('Content-Type', 'application/json');
@@ -8,7 +8,13 @@ export default {
       headers: headers,
       mode: 'cors',
     };
-    const request = new Request('http://localhost:9000/todo');
+    let url;
+    if (filter) {
+      url = 'http://localhost:9000/todo?filter=' + filter; 
+    } else {
+      url = 'http://localhost:9000/todo';
+    }
+    const request = new Request(url);
     return fetch(request, options).then(response => {
       return response.json();
     });

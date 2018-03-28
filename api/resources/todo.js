@@ -26,10 +26,37 @@ module.exports = (server, orm) => {
 
 	server.get('/todo', (req, res, next) => {
 
+		const where = {};
+
+		const today = new Date();
+		const tomorrow = new Date();
+		tomorrow.setDate(today.getDate() + 1);
+
+		switch(req.query.filter) {
+			case 'dueSoon':
+				where.dueDate = {
+					$between: [
+						today.toISOString().slice(0, 10),
+						tomorrow.toISOString().slice(0, 10),
+					],
+				};
+				break;
+			case 'pastDue':
+				where.dueDate = {
+					$lt: today.toISOString().slice(0, 10),
+				};
+				break;
+			case 'completed':
+				where.complete = true;
+				break;
+			default:
+		}
+
 		res.setHeader('Access-Control-Allow-Origin', '*');
 
 		orm.models.todo
 			.findAll({
+				where: where,
 				order: [
 					['dueDate', 'DESC'],
 				],

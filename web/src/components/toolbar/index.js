@@ -7,6 +7,7 @@ export default {
       filterState: {
         dueSoon: false,
         pastDue: false,
+        completed: false,
       },
     };
   },
@@ -26,7 +27,8 @@ export default {
         }
       });
       this.filterState[filter] = !this.filterState[filter];
-      this.$parent.reloadTodos(this.filterState);
+
+      this.$parent.reloadTodos(this.filterState[filter] ? filter : null);
     },
   },
   template: template,
