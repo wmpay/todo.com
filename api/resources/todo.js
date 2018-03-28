@@ -54,7 +54,7 @@ module.exports = (server, orm) => {
 			res.send(200, todo);
 			return next();
 		}).catch(err => {
-			return next(new errors.BadRequestError(err));
+			return next(new errors.InvalidContentError(err));
 		});
 	});
 
@@ -101,7 +101,7 @@ module.exports = (server, orm) => {
 					res.send(200, todo);
 					return next();
 				}).catch(err => {
-					return next(new errors.BadRequestError(err));
+					return next(new errors.InvalidContentError(err));
 				});
 			}
 		});
