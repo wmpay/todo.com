@@ -1,0 +1,6 @@
+FROM node
+WORKDIR /usr/src/mocha
+COPY package*.json ./
+COPY test ./test
+RUN npm install -g mocha
+CMD ["npm", "test"]
