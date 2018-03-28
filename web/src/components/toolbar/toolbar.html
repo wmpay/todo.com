@@ -2,8 +2,26 @@
   <div class="mr-auto">
   	Filters: 
   	<div class="btn-group">
-  		<button class="btn btn-outline-primary">Due Soon</button>
-  		<button class="btn btn-outline-primary">Overdue</button>
+  		<button 
+        class="btn"
+        v-bind:class="{
+          'btn-primary': filterState.dueSoon,
+          'btn-outline-primary': !filterState.dueSoon
+        }"
+        v-on:click="toggleFilterState('dueSoon');"
+      >
+        Due Soon
+      </button>
+  		<button
+        class="btn"
+        v-bind:class="{
+          'btn-primary': filterState.pastDue,
+          'btn-outline-primary': !filterState.pastDue
+        }"
+        v-on:click="toggleFilterState('pastDue');"
+      >
+        Overdue
+      </button>
   	</div>
   </div>
   <button
