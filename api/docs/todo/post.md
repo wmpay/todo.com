@@ -13,7 +13,7 @@ Allow the User to create a todo.
   "name": "[1 to 255 characters]",
   "description": "[unlimited characters]",
   "dueDate": "[date string]",
-  "complete": [boolean]
+  "complete": "[boolean]"
 }
 ```
 
