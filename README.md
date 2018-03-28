@@ -8,15 +8,21 @@ Installation was tested on macOS High Sierra Version 10.13.2
 
 (Optional) [Install homebrew](https://brew.sh/):
 
-`/usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"`
+```
+	/usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+```
 
 [Install node](https://nodejs.org/en/download/), or use homebrew:
 
-`brew install node`
+```
+	brew install node
+```
 
-Install node dependancies:
+Install node dependencies:
 
-`npm install`
+```
+	npm install
+```
 
 [Install Docker](https://docs.docker.com/install/)
 
