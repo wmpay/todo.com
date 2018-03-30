@@ -8,5 +8,8 @@
     },
     "parserOptions": {
 	    "sourceType": "module"
+    },
+    "rules": {
+        "semi": 2
     }
 }

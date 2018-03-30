@@ -15,5 +15,5 @@ todoResource(server, orm);
 
 server.listen(9000, () => {
 	// eslint-disable-next-line no-console
-	console.log('%s listening at %s', server.name, server.url)
-})
+	console.log('%s listening at %s', server.name, server.url);
+});

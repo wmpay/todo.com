@@ -32,14 +32,14 @@ export default {
     dueSoon: function () {
       // buggy due to timezone?
       const today = moment();
-      const dueDate = moment(this.dueDate)
+      const dueDate = moment(this.dueDate);
       const diff = dueDate.diff(today, 'days');
 
       return 0 === diff || diff === 1;
     },
     pastDue: function () {
       const today = moment();
-      const dueDate = moment(this.dueDate)
+      const dueDate = moment(this.dueDate);
       const diff = dueDate.diff(today, 'days');
 
       return diff < 0;

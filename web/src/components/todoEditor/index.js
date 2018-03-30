@@ -19,7 +19,7 @@ export default {
         this.$modal.hide('todoEditor');
         // this is a hack, use events instead?
         this.$parent.$parent.$parent.$children[0].reloadTodos();
-      }) 
+      });
     },
   },
   template: template,

@@ -15,7 +15,7 @@ const invalidTodo = {
   description: "bar",
   dueDate: "garbage",
   complete: false
-}
+};
 
 const testTodo = {
   name: "test before",
