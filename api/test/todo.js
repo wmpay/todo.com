@@ -30,7 +30,7 @@ describe('/todo', function() {
 
   describe('GET', function() {
     it('return a list of todos', function(done) {
-      request.get('http://api:9000/todo', function(err, res, body) {
+      request.get(url, function(err, res, body) {
         assert.strictEqual(res.statusCode, 200);
         assert(body.length > 0);
         done();
@@ -53,7 +53,7 @@ describe('/todo', function() {
       request.post({
         url: url,
         json: invalidTodo,
-      }, function(err, res, body) {
+      }, function(err, res) {
         assert.strictEqual(res.statusCode, 400);
         done();
       });
@@ -61,6 +61,9 @@ describe('/todo', function() {
   });
 
   describe('PATCH', function() {
+
+    let testTodoPatch;
+
     before(function(done) {
       request.post({
         url: url,
@@ -88,7 +91,7 @@ describe('/todo', function() {
       request.patch({
         url: url + '/' + badId,
         json: testTodoPatch,
-      }, function(err, res, body) {
+      }, function(err, res) {
         assert.strictEqual(res.statusCode, 404);
         done();
       });
@@ -96,6 +99,9 @@ describe('/todo', function() {
   });
 
   describe('DELETE', function() {
+
+    let testTodoDelete;
+
     before(function(done) {
       request.post({
         url: url,
@@ -108,7 +114,7 @@ describe('/todo', function() {
     it('should allow the user to delete a todo', function(done) {
       request.delete({
         url: url + '/' + testTodoDelete.id,
-      }, function(err, res, body) {
+      }, function(err, res) {
         assert.strictEqual(res.statusCode, 200);
         done();
       });
@@ -116,8 +122,8 @@ describe('/todo', function() {
     it('should not allow the user to delete a non existant todo', function(done) {
       const badId = -9999;
       request.delete({
-        url: url + '/' + testTodoDelete.id,
-      }, function(err, res, body) {
+        url: url + '/' + badId,
+      }, function(err, res) {
         assert.strictEqual(res.statusCode, 404);
         done();
       });
