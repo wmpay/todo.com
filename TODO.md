@@ -1,3 +1,3 @@
 # todo list for the todo app
-- use nginx as a reverse proxy to api and get rid of CORS code
+- get semaphore ci to work
 - bug fixes
