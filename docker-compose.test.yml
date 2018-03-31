@@ -2,9 +2,7 @@ version: '3'
 
 services:
   test:
-    build:
-      context: ./api
-      dockerfile: Dockerfile-mocha
+    build: ./api/test
     depends_on:
       - api
   api:
@@ -13,10 +11,10 @@ services:
       - "9000"
     depends_on:
       - db
-    # logging:
-    #   # disable logging to allow test output to be readable
-    #   # TODO: find a better solution
-    #   driver: none
+    logging:
+      # disable logging to allow test output to be readable
+      # TODO: find a better solution
+      driver: none
   db:
     build: ./db
     ports:
@@ -24,7 +22,7 @@ services:
     environment:
       - POSTGRES_USER=postgres
       - POSTGRES_PASSWORD=postgres
-    # logging:
-    #   # disable logging to allow test output to be readable
-    #   # TODO: find a better solution
-    #   driver: none
+    logging:
+      # disable logging to allow test output to be readable
+      # TODO: find a better solution
+      driver: none

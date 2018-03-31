@@ -1,7 +1,0 @@
-FROM node
-WORKDIR /usr/src/mocha
-COPY package.json .
-COPY test ./test
-# package-lock does not work properly with --only-dev in npm 5
-RUN npm install --only=dev --package-lock=false
-CMD ["npm", "test"]
