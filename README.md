@@ -2,6 +2,8 @@
 
 A web application to manage To Do items
 
+[![Build Status](https://semaphoreci.com/api/v1/wmpay/todo-com/branches/master/shields_badge.svg)](https://semaphoreci.com/wmpay/todo-com)
+
 ## Installation
 
 Installation was tested on macOS High Sierra Version 10.13.2

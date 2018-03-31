@@ -1,3 +1,4 @@
 # todo list for the todo app
-- use nginx as a reverse proxy to api and get rid of CORS code
+- get semaphore ci to work
+- use volume for node_modules in dev env
 - bug fixes
